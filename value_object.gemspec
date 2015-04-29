@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Carlos Palhares"]
   spec.email         = ["me@xjunior.me"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{ValueObjects compliant with most ruby ORM}
+  spec.description   = %q{ValueObjects compliant with most ruby ORM, allowing a class to have a relation with a value object in similarly to any other relation}
+  spec.homepage      = "http://github.com/xjunior/value_object"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
+    # spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   end
 
   spec.add_development_dependency "bundler", "~> 1.9"

@@ -9,7 +9,7 @@ describe ValueObject::I18n do
 
   describe '.name_s' do
     it 'is the translation of the value name in the value_object context' do
-      expect(I18n).to receive(:t).with(:black, [:value_objects, :HairColor]).and_return('preto')
+      expect(I18n).to receive(:t).with(:black, scope: [:value_objects, :HairColor], default: :black).and_return('preto')
 
       expect(HairColor.black.name_s).to eql 'preto'
     end

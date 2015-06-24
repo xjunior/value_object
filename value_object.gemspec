@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'value_object/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "value_object"
+  spec.name          = "value_object-ruby"
   spec.version       = ValueObject::VERSION
   spec.authors       = ["Carlos Palhares"]
   spec.email         = ["me@xjunior.me"]

@@ -1,10 +1,11 @@
 require 'spec_helper'
+require 'value_object/i18n'
 
 describe ValueObject::I18n do
   class HairColor < ValueObject::Base
     include ValueObject::I18n
 
-    value :black, 1
+    value :black
   end
 
   describe '.name_s' do

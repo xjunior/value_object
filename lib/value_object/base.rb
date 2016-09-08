@@ -1,17 +1,23 @@
 module ValueObject
-  class Base < Struct.new(:name, :id)
+  class Base
+    attr_reader :key
+ 
+    def initialize(key)
+      @key = key
+    end
+
     class << self
-      def find(id)
-        return unless id
-        all.find {|v| v.id.to_s.eql?(id.to_s)} || raise(ValueObject::InvalidValue, "#{self.name} with id #{id} not found")
+      def find(key)
+        return unless key
+        all.find {|v| v.key.to_s.eql?(key.to_s)} || raise(ValueObject::InvalidValue, "#{self.to_s} #{key} not found")
       end
 
       attr_accessor :all
 
       protected
 
-      def value(name, id, *args)
-        object = new(name, id, *args)
+      def value(key, *args)
+        object = new(key, *args)
         define_value_getter object
 
         @all ||= []
@@ -19,7 +25,7 @@ module ValueObject
       end
 
       def define_value_getter(object)
-        define_singleton_method(object.name) { object }
+        define_singleton_method(object.key) { object }
       end
     end
   end

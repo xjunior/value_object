@@ -5,15 +5,15 @@ module ValueObject
     end
 
     module ClassMethods
-      def value_attribute(name, klass)
-        id_attr = "#{name}_id"
+      def value_attribute(attr_name, klass)
+        id_attr = "#{attr_name}_id"
 
-        define_method name do
+        define_method attr_name do
           klass.find self.public_send(id_attr)
         end
 
-        define_method "#{name}=" do |obj|
-          self.public_send("#{id_attr}=", obj.id)
+        define_method "#{attr_name}=" do |obj|
+          self.public_send("#{id_attr}=", obj.key)
         end
       end
     end

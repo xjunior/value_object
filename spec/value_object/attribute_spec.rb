@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ValueObject::Attribute do
-  class EyeColor < ValueObject::Base
+  class EyeColor <  ValueObject::Base
     value :dark_brown
     value :green
     value :blue
